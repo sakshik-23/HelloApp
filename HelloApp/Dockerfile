@@ -5,13 +5,14 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 	
 	  # 3️Copy the built JAR file into the container
-COPY --from=build ./target/helloapp-0.0.1-SNAPSHOT.jar app.jar
+COPY ./target/helloapp-0.0.1-SNAPSHOT.jar app.jar
 	
 	 # 4️Expose the application port
 EXPOSE 8484
 	
 	# 5️Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
+
 
 
 
